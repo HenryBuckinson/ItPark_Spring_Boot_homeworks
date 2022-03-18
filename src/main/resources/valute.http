@@ -1,0 +1,10 @@
+POST http://localhost:8080/getRubInfo/converter?specValute=KZT
+
+###
+GET http://localhost:8080/valute.html
+
+###
+POST http://localhost:8080/getRubInfo/valute?valute=USD
+
+
+

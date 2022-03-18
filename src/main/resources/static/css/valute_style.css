@@ -1,0 +1,46 @@
+#course {
+    border-width: 5px;
+    border-color: darkcyan;
+    border-style: solid;
+    border-radius: 5px;
+    width: 440px;
+    height: auto;
+    background-color: gray;
+}
+#courseInfo{
+    background-color: rebeccapurple;
+    color: whitesmoke;
+    font-size: medium;
+}
+#convertInfo{
+    background-color: rebeccapurple;
+    color: whitesmoke;
+    font-size: medium;
+}
+
+#convert {
+    border-width: 5px;
+    border-color: darkcyan;
+    border-style: solid;
+    border-radius: 5px;
+    width: 500px;
+    height: auto;
+    background-color: gray;
+}
+#valute{
+    background-color: gray;
+}
+#firstValue{
+    background-color: gray;
+}
+#secondValute{
+    background-color: gray;
+}
+#getInfo{
+    background-color: rebeccapurple;
+    color: whitesmoke;
+}
+#converter{
+    background-color: rebeccapurple;
+    color: whitesmoke;
+}
