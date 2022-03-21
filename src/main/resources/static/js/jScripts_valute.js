@@ -1,10 +1,9 @@
 $(document).ready(function () {
     $('#getInfo').click(function () {
         let val = $('#valute').val();
-
         $.ajax({
-            url: '/getRubInfo/valute?valute=' + val,
-            type: 'POST',
+            url: '/valutes/rub/info?valute=' + val,
+            type: 'GET',
             success: function (result) {
                 $('#resultId').text('ID валюты: ' + result.id);
                 $('#resultName').text('Наименование валюты: ' + result.name);
@@ -24,9 +23,8 @@ $(document).ready(function () {
     $('#converter').click(function () {
         let selectedValute = $('#secondValute').val();
         let interestingValue = $('#firstValue').val();
-
         $.ajax({
-            url: '/getRubInfo/converter?specValute=' + selectedValute,
+            url: '/valutes/rub/convert?specify-valute=' + selectedValute,
             type: 'POST',
             success: function (result) {
                 $('#secondValue').text(Math.round((result.nominalValue / result.value) * interestingValue * 100) / 100);

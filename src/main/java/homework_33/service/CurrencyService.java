@@ -1,13 +1,7 @@
 package homework_33.service;
 
+import homework_33.dto.ResultCurrencyDto;
+
 public interface CurrencyService {
-    void getRubInfoRelateTo(String valute);
-
-    String getId(String valute);
-
-    String getName(String valute);
-
-    Double getValue(String valute);
-
-    Integer getNominal(String valute);
+    ResultCurrencyDto getCurrencyInfo(String valute);
 }

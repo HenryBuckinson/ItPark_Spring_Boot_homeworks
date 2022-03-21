@@ -1,10 +1,7 @@
-POST http://localhost:8080/getRubInfo/converter?specValute=KZT
+POST http://localhost:8080/valutes/rub/convert?specify-valute=KZT
 
 ###
 GET http://localhost:8080/valute.html
 
 ###
-POST http://localhost:8080/getRubInfo/valute?valute=USD
-
-
-
+GET http://localhost:8080/valutes/rub/info?valute=USD
