@@ -1,0 +1,27 @@
+#users{
+    width: auto;
+    height: auto;
+    background-color: gainsboro;
+    position: relative;
+    top: 100px;
+}
+#createUser{
+    position: relative;
+    top: 10px;
+}
+#updateUser{
+    position: relative;
+    top: 10px;
+}
+#deleteUser{
+    position: relative;
+    top: 10px;
+}
+#login{
+    position: relative;
+    top: 5px;
+}
+#id{
+    position: relative;
+    left: 21px;
+}
