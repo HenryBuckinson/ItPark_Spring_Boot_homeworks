@@ -1,27 +1,45 @@
-#users{
+#usersField{
+    position: absolute;
+}
+#usersHead {
     width: auto;
     height: auto;
-    background-color: gainsboro;
+    background-color: lightgrey;
     position: relative;
-    top: 100px;
+    border: forestgreen solid;
 }
-#createUser{
+
+#usersBody {
+    position: inherit;
+    background-color: lightgrey;
+    border: forestgreen solid;
+}
+#usersTab{
+    top: 150px;
+    position: absolute;
+}
+
+#createUser {
     position: relative;
     top: 10px;
 }
-#updateUser{
+
+#refresh {
     position: relative;
     top: 10px;
 }
-#deleteUser{
+
+#deleteUser {
     position: relative;
     top: 10px;
 }
-#login{
+
+#login {
     position: relative;
     top: 5px;
 }
-#id{
+
+#id {
     position: relative;
     left: 21px;
 }

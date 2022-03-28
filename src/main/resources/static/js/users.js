@@ -1,7 +1,7 @@
 $(function () {
-    $('#createUser').click(function (){
+    $('#createUser').click(function () {
         $.ajax({
-            url: 'api/home/create',
+            url: 'api/home/createUsers',
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
@@ -17,6 +17,54 @@ $(function () {
                 $('#login').val('')
             }
         });
-    });
+    });//Event for button-create
 
+    $('#refresh').click(function () {
+        $.ajax({
+            url: '/api/home/Users',
+            type: 'GET',
+            success: function (result) {
+                let amount = result.amount;
+                let users = result.users;
+                let usersTab = $('#usersBody').html('');
+                for (let i = 0; i < users.length; i++) {
+                    usersTab.append('<tr>')
+                        .append('<td>' + users[i].id + '</td>')
+                        .append('<td>' + users[i].login + '</td>')
+                        .append('</tr>')
+                        .append('<br>')
+                }
+            }
+        })
+    })//Event for button-refresh
+
+    $('#deleteUser').click(function () {
+        let idValue = prompt("Введите ID или Login для удаления:");
+
+        if (!isNaN(idValue)) {
+            $.ajax({
+                url: '/api/home/byId/' + idValue,
+                type: 'DELETE',
+                success: function () {
+                    alert('Удаление прошло успешно!');
+                }
+            });
+        }
+        if (isNaN(idValue)) {
+            $.ajax({
+                url: 'api/home/byLogin/' + idValue,
+                type: 'DELETE',
+                success: function () {
+                    alert('Удаление прошло успешно!');
+                }
+            });
+        }
+
+
+    });//Event for button-delete
+
+
+    $('body').on('input', '#id', function () {
+        this.value = this.value.replace(/[^0-9]/g, '');
+    });//Constraint for id-input
 })
