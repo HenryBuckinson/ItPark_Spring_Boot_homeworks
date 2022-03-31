@@ -31,3 +31,12 @@ spring:
 
   liquibase:
     change-log: 'classpath:homework_30/db/migrations/changeLog.xml'
+
+springdoc:
+  packages-to-scan: homework_34.controller
+  api-docs:
+    path: /api-docs
+    enabled: true
+  swagger-ui:
+    path: /swagger-ui.html
+    enabled: true

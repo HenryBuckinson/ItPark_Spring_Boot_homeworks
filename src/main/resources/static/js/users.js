@@ -1,7 +1,7 @@
 $(function () {
     $('#createUser').click(function () {
         $.ajax({
-            url: 'api/home/createUsers',
+            url: 'api/users',
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
@@ -21,11 +21,10 @@ $(function () {
 
     $('#refresh').click(function () {
         $.ajax({
-            url: '/api/home/Users',
+            url: '/api/users',
             type: 'GET',
             success: function (result) {
-                let amount = result.amount;
-                let users = result.users;
+                let users = result;
                 let usersTab = $('#usersBody').html('');
                 for (let i = 0; i < users.length; i++) {
                     usersTab.append('<tr>')
@@ -43,7 +42,7 @@ $(function () {
 
         if (!isNaN(idValue)) {
             $.ajax({
-                url: '/api/home/byId/' + idValue,
+                url: '/api/by-id/' + idValue,
                 type: 'DELETE',
                 success: function () {
                     alert('Удаление прошло успешно!');
@@ -52,7 +51,7 @@ $(function () {
         }
         if (isNaN(idValue)) {
             $.ajax({
-                url: 'api/home/byLogin/' + idValue,
+                url: 'api/by-login/' + idValue,
                 type: 'DELETE',
                 success: function () {
                     alert('Удаление прошло успешно!');
