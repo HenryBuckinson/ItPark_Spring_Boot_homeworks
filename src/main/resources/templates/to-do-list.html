@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>ToDoList</title>
+    <link rel="stylesheet" th:href="@{../static/css/ToDoListStyle.css}" href="../static/css/ToDoListStyle.css" >
+</head>
+<body>
+
+<table id="toDoListTable">
+    <thead>
+        <tr id="commonHead">
+            <td class="orderNumberHead">№</td>
+            <td class="noteHead">Заметка</td>
+            <td class="statusHead">Статус</td>
+            <td class="dateHead">Дата заметки</td>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr style="height: 18px;">
+            <td class="orderNumberHead"></td>
+            <td class="noteHead">
+                <form action=""><div id="noteContent" role="textbox" contenteditable="true"></div></form>
+            </td>
+            <td class="statusHead">
+                <select id="statusSelector">
+                    <option value="0" ></option>
+                    <option value="1" id="processingNote">В процессе</option>
+                    <option value="2" id="modifyNote">Изменить</option>
+                    <option value="3" id="completeNote">Завершено</option>
+                    <option value="4" id="removeNote">Удалить</option>
+                </select>
+            </td>
+            <td class="dateHead"></td>
+        </tr>
+    </tbody>
+</table>
+
+</body>
+</html>

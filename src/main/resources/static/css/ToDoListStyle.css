@@ -1,0 +1,41 @@
+#toDoListTable{
+    width: 100%;
+    height: 40px;
+    border-collapse: collapse;
+    border-style: solid;
+}
+#commonHead{
+    height: 20px;
+}
+.orderNumberHead{
+    border-collapse: collapse;
+    border-style: solid;
+    text-align: center;
+    width: 5%;
+    height: 20px;
+}
+.noteHead{
+    border-collapse: collapse;
+    border-style: solid;
+    text-align: center;
+    width: 70%;
+    height: 20px;
+}
+.statusHead{
+    border-collapse: collapse;
+    border-style: solid;
+    text-align: center;
+    width: 10%;
+    height: 20px;
+}
+.dateHead{
+    border-collapse: collapse;
+    border-style: solid;
+    text-align: center;
+    width: 10%;
+    height: 20px;
+}
+#noteField{
+    height: inherit;
+    width: -moz-available;
+}
