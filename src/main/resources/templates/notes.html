@@ -3,25 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <title>ToDoList</title>
-    <link rel="stylesheet" th:href="@{../static/css/ToDoListStyle.css}" href="../static/css/ToDoListStyle.css" >
+    <link rel="stylesheet" th:href="@{/css/ToDoListStyle.css}" href="/css/ToDoListStyle.css">
 </head>
 <body>
-
-<table id="toDoListTable">
-    <thead>
+    <form>
+        <button th:object="${save}" th:method="POST">Add row</button>
+        <button>Delete row</button>
+    </form>
+    <table id="toDoListTable">
+        <thead>
         <tr id="commonHead">
             <td class="orderNumberHead">№</td>
             <td class="noteHead">Заметка</td>
             <td class="statusHead">Статус</td>
             <td class="dateHead">Дата заметки</td>
         </tr>
-    </thead>
+        </thead>
 
-    <tbody>
-        <tr style="height: 18px;">
-            <td class="orderNumberHead"></td>
-            <td class="noteHead">
-                <form action=""><div id="noteContent" role="textbox" contenteditable="true"></div></form>
+        <tbody>
+        <tr style="height: 18px;" th:each ="item : ${allNotes}">
+            <td class="orderNumberHead" th:utext="${item.order}"></td>
+            <td contenteditable="true" class="noteHead" th:utext="${item.note}">
+    <!--            <form action=""><div id="noteContent" role="textbox" contenteditable="true"></div></form>-->
             </td>
             <td class="statusHead">
                 <select id="statusSelector">
@@ -32,10 +35,10 @@
                     <option value="4" id="removeNote">Удалить</option>
                 </select>
             </td>
-            <td class="dateHead"></td>
+            <td class="dateHead" th:utext="${item.date}"></td>
         </tr>
-    </tbody>
-</table>
+        </tbody>
+    </table>
 
 </body>
 </html>

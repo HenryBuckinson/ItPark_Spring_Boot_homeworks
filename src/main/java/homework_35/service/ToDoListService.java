@@ -1,9 +1,11 @@
 package homework_35.service;
 
-import homework_35.model.ToDoList;
+import homework_35.dto.ToDoListDto;
 
 import java.util.List;
 
 public interface ToDoListService {
-    List<ToDoList> findAll();
+    List<ToDoListDto> findAll();
+    ToDoListDto add(ToDoListDto note);
+    void deleteById(Integer id);
 }

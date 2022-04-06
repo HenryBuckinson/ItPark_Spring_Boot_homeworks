@@ -45,17 +45,17 @@
             </not>
         </preConditions>
         <createTable tableName="ToDoList">
-            <column name="№" type="SERIAL(200)" >
+            <column name="ID" type="SERIAL(200)">
                 <constraints primaryKey="true"/>
             </column>
             <column name="Note" type="VARCHAR(255)">
-                <constraints nullable="false"/>
+<!--                <constraints />-->
             </column>
             <column name="Date" type="TIMESTAMP" defaultValueDate="CURRENT_TIMESTAMP">
-                <constraints nullable="false"/>
+<!--                <constraints />-->
             </column>
-            <column name="isChecked" type="BOOLEAN" defaultValue="false">
-                <constraints nullable="false"/>
+            <column name="Is_Done" type="BOOLEAN" defaultValue="false">
+<!--                <constraints />-->
             </column>
         </createTable>
 
