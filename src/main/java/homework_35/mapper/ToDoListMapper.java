@@ -29,7 +29,7 @@ public interface ToDoListMapper {
         return entities.stream().map(this::toDto).collect(Collectors.toList());
     }
 
-    default Optional<ToDoListDto> toOptionalDto(Optional<ToDoList> entity) {
+    default Optional<ToDoListDto> toOptionalDtos(Optional<ToDoList> entity) {
         return entity.map(this::toDto);
     }
 }

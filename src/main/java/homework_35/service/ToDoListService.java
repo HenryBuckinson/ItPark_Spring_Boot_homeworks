@@ -6,6 +6,11 @@ import java.util.List;
 
 public interface ToDoListService {
     List<ToDoListDto> findAll();
+
     ToDoListDto add(ToDoListDto note);
+
+    void deleteRowFromTheEnd();
+
     void deleteById(Integer id);
+
 }
