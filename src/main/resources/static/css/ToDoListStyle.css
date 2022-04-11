@@ -4,6 +4,14 @@
     border-collapse: collapse;
     border-style: solid;
 }
+
+#tableDiv{
+    top: -15px;
+    position: relative;
+    width: auto;
+    height: auto;
+}
+
 #commonHead{
     height: 20px;
 }
@@ -39,3 +47,21 @@
     height: inherit;
     width: -moz-available;
 }
+
+#addRow{
+    border-collapse: collapse;
+    position: relative;
+    width: fit-content;
+    height: fit-content;
+}
+
+#deleteRow{
+    border-collapse: collapse;
+    position: relative;
+    width: fit-content;
+    height: fit-content;
+    left: 120px;
+    top: -22.3px;
+}
+
+

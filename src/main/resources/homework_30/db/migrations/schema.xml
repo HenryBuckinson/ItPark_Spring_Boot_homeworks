@@ -49,13 +49,10 @@
                 <constraints primaryKey="true"/>
             </column>
             <column name="Note" type="VARCHAR(255)" defaultValue="New note...">
-<!--                <constraints />-->
             </column>
             <column name="Date" type="TIMESTAMP" defaultValueDate="CURRENT_TIMESTAMP">
-<!--                <constraints />-->
             </column>
             <column name="Is_Done" type="BOOLEAN" defaultValueBoolean="false">
-<!--                <constraints />-->
             </column>
         </createTable>
 

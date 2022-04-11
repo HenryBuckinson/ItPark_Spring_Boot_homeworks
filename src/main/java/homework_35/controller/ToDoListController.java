@@ -27,15 +27,15 @@ public class ToDoListController {
     }
 
     @PostMapping("/add")
-    public String addNote(){
+    public String addNote() {
         service.add(new ToDoListDto());
         return "redirect:/notes";
     }
 
-//    @PostMapping("/delete")
-//    public String deleteRow(){
-//        service.deleteRowFromTheEnd();
-//        return "redirect:/notes";
-//    }
+    @PostMapping("/delete")
+    public String deleteRow() {
+        service.deleteRowFromTheEnd();
+        return "redirect:/notes";
+    }
 
 }

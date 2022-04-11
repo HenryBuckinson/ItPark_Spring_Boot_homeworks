@@ -5,8 +5,6 @@ import homework_35.mapper.ToDoListMapper;
 import homework_35.repository.ToDoListRepository;
 import homework_35.service.ToDoListService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.data.jpa.repository.Modifying;
-import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -34,19 +32,25 @@ public class ToDoListServiceImpl implements ToDoListService {
 
     @Override
     @Transactional
-    @Modifying
-//    @Query(value = "DELETE FROM ToDoList WHERE ToDoList.ID = (SELECT * FROM (SELECT MAX(ToDoList.ID) FROM ToDoList) AS tableAbstract)", nativeQuery = true)
-    @Query(value = "DELETE FROM ToDoList WHERE ToDoList.order = 4")
     public void deleteRowFromTheEnd() {
-
+        repository.deleteRowFromTheEnd();
     }
 
     @Override
     @Transactional
-    @Modifying
-    public void deleteById(Integer id) {
+    public void updateNoteById(String text, Integer id) {
+        repository.updateTextById(text, id);
+    }
+
+    @Override
+    @Transactional
+    public void deleteEmptyNoteById(Integer id) {
         repository.deleteById(id);
     }
 
-
+    @Override
+    @Transactional
+    public void switchStatusOfNoteById(Boolean status, Integer id) {
+        repository.updateNoteStatusById(status, id);
+    }
 }

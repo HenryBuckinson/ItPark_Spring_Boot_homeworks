@@ -12,10 +12,22 @@ public class ToDoListRestController {
 
     private final ToDoListService service;
 
-    @DeleteMapping("/delete/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public void deleteRow(@PathVariable("id") Integer id){
-        service.deleteById(id);
+    @PostMapping("/update/{note}/{id}")
+    public void updateNote(@PathVariable("note") String text, @PathVariable("id") Integer id) {
+        service.updateNoteById(text, id);
+    }
+
+    @ResponseStatus(HttpStatus.OK)
+    @DeleteMapping("/update/{id}")
+    public void deleteEmptyNote(@PathVariable("id") Integer id) {
+        service.deleteEmptyNoteById(id);
+    }
+
+    @PostMapping("/progress/{id}/{isDone}")
+    public void noteInProgress(@PathVariable("id") Integer id, @PathVariable("isDone") String isDone) {
+        Boolean response = Boolean.parseBoolean(isDone);
+        service.switchStatusOfNoteById(response, id);
     }
 
 }

@@ -11,6 +11,9 @@ public interface ToDoListService {
 
     void deleteRowFromTheEnd();
 
-    void deleteById(Integer id);
+    void updateNoteById(String text, Integer id);
 
+    void deleteEmptyNoteById(Integer id);
+
+    void switchStatusOfNoteById(Boolean status, Integer id);
 }
