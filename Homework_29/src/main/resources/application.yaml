@@ -1,0 +1,11 @@
+spring:
+  main:
+    banner-mode:
+      'off'
+
+  zipunzip:
+    resultNameZipFile: resultFile.zip
+    locale: en
+
+  messages:
+    encoding: UTF-8

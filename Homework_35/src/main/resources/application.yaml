@@ -1,0 +1,36 @@
+spring:
+  main:
+    banner-mode:
+      'off'
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/db
+    username: user
+    password: pass
+    driverClassName: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    generate-ddl: false
+    hibernate:
+      ddl-auto: validate
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    show-sql: true
+    properties:
+      hibernate:
+        default_schema: db
+        format_sql: true
+      database-platform: org.hibernate.dialect.MySQL8Dialect
+
+  liquibase:
+    change-log: 'classpath:db.migrations/changeLog.xml'
+
+springdoc:
+  packages-to-scan: Homework_35.src.java.Application.controller
+  api-docs:
+    path: /api-docs
+    enabled: true
+  swagger-ui:
+    path: /swagger-ui.html
+    enabled: true
+
