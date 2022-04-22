@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Access granted</title>
+    <link rel="stylesheet" th:href="@{/css/hello.css}" href="/css/hello.css">
+    <script th:src="@{/js/hello.js}" src="/js/hello.js"></script>
+</head>
+<body>
+    <div><label><a>Hello and welcome!</a></label></div>
+    <menu>
+        <ul>
+            <li><a th:href="@{/access/admin}" href="/access/admin">Контент для админа</a></li>
+            <li><a th:href="@{/access/user}" href="/access/user">Контент для юзера</a></li>
+        </ul>
+    </menu>
+</body>
+</html>

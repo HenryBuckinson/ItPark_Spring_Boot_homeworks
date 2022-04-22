@@ -1,0 +1,72 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <changeSet  id="Create-table-role" author="Henry">
+        <preConditions>
+            <not>
+                <tableExists tableName="ROLE"/>
+            </not>
+        </preConditions>
+        <createTable tableName="ROLE">
+            <column name="ID" type="BIGINT" autoIncrement="true">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="NAME" type="VARCHAR(255)">
+                <constraints nullable="false" unique="true"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="Create-table-user" author="Henry">
+        <preConditions>
+            <not>
+                <tableExists tableName="USER"/>
+            </not>
+        </preConditions>
+        <createTable tableName="USER">
+            <column name="ID" type="BIGINT" autoIncrement="true">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="LOGIN" type="VARCHAR(255)">
+                <constraints nullable="false" unique="true"/>
+            </column>
+            <column name="PASSWORD" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="STATUS" type="INT(1)" defaultValue="1">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ROLE_ID" type="BIGINT">
+                <constraints nullable="false" foreignKeyName="FK_USER_ROLE" references="ROLE(ID)"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="Populate-table-role-and-user1" author="Henry">
+        <insert tableName="ROLE">
+            <column name="NAME" value="ADMIN" />
+        </insert>
+
+        <insert tableName="USER">
+            <column name="LOGIN" value="admin" />
+            <column name="PASSWORD" value="$2a$10$TOkDvYrtYfaMF11BUjBIfujE8jgMOASYX8T5L4pd5zBZXuXfFBJBu" /> <!--Qwerty-->
+            <column name="ROLE_ID" valueComputed="(SELECT ID FROM ROLE WHERE NAME = 'ADMIN')" />
+        </insert>
+    </changeSet>
+
+    <changeSet id="Populate-table-role-and-user2" author="Henry">
+        <insert tableName="ROLE">
+            <column name="NAME" value="USER" />
+        </insert>
+
+        <insert tableName="USER">
+            <column name="LOGIN" value="user123" />
+            <column name="PASSWORD" value="$2a$10$hGz.hPJEa3vzbq.HXWIkiucFR4AsfVkM/dBsvjgitgPI40nNn3op6" /> <!--1234-->
+            <column name="ROLE_ID" valueComputed="(SELECT ID FROM ROLE WHERE NAME = 'USER')" />
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>
