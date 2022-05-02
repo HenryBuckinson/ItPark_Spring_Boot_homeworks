@@ -16,6 +16,8 @@
         <module>Homework_33</module>
         <module>Homework_34</module>
         <module>Homework_35</module>
+        <module>Homework_37</module>
+        <module>CommonService</module>
     </modules>
 
     <properties>

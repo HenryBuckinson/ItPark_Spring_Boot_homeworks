@@ -4,7 +4,7 @@ spring:
       'off'
 
   datasource:
-    url: jdbc:mysql://localhost:3306/db
+    url: jdbc:mysql://localhost:33060/db
     username: user
     password: pass
     driverClassName: com.mysql.cj.jdbc.Driver
