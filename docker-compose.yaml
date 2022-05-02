@@ -7,8 +7,17 @@ services:
       MYSQL_DATABASE: 'db'
       MYSQL_USER: 'user'
       MYSQL_PASSWORD: 'pass'
-      MYSQL_ROOT_PASSWORD: 'rootpass'
+      MYSQL_ROOT_PASSWORD: 'pass'
     ports:
-      - '3306:3306'
+      - '33060:3306'
     expose:
       - '3306'
+  mongodb:
+    image: mongo
+    container_name: mongodb
+    volumes:
+      - mongodata:/data/db
+    ports:
+      - 27017:27017
+volumes:
+  mongodata:
